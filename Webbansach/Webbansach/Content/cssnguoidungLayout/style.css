@@ -1,0 +1,101 @@
+﻿
+body {
+    font-size: 14px;
+}
+
+.navdangkydangnhap {
+    float: right;
+    margin-top: -13px;
+    color: goldenrod;
+    font-size: 14px;
+}
+
+.dangkydangnhap {
+    color: #e8e8e8;
+}
+
+    .dangkydangnhap a:hover {
+        color: #ba8a12;
+        transition: 0.5s;
+    }
+
+#wrapper {
+    position: relative;
+}
+
+.dangkydangnhap a:hover {
+    text-decoration: none;
+}
+
+.phone-number {
+    float: left;
+    margin-top: -13px;
+    font-size: 14px;
+    color: #e27066;
+}
+
+#Danhmuc {
+    height: 30px;
+}
+
+.navMenu {
+    margin-top: 3px;
+}
+
+    .navMenu li {
+        display: inline;
+        padding: 21px;
+    }
+
+        .navMenu li:hover {
+            background-color: #3d3d3c;
+        }
+
+    .navMenu a:hover {
+        text-decoration: none;
+    }
+
+#txtTimkiem {
+    margin-left: 3%;
+    float: left;
+}
+
+    #txtTimkiem input {
+        height: 0;
+    }
+
+.btntimkiem {
+    float: right;
+    margin-top: -28px;
+    margin-left: 15px;
+}
+
+    .btntimkiem button {
+        padding: 7px 20px;
+    }
+
+        .btntimkiem button i {
+            color: #ffffff;
+        }
+#slider{
+    float:left;
+    width:900px;
+    margin-left:60px;
+}
+.Menuleft{
+    float:left;
+   
+}
+.divLeft {
+    float: left;
+    width: 200px;
+    text-align: center;
+}
+.item {
+    width: 400px;
+}
+.divRight{
+    width:800px;
+    float:left;
+    padding:50px;
+}

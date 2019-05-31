@@ -1,0 +1,25 @@
+﻿@using Webbansach.Models;
+@model List<NhaXuatBan>
+<h1 id="TieuDeNSB">Nhà xuất bản</h1>
+@{
+    foreach (var item in Model)
+    {
+        <div class="itemNXB"><i class="fa fa-book"></i><a href="@Url.Action("SachTheoNXB", new { @MaNXB=item.MaNXB })"> @item.TenNXB</a></div>
+    }
+}
+<div class="itemNXB"><i class="fa fa-book"></i><a href="@Url.Action("DanhMucNXB")"> Nhà xuất bản khác...</a></div>
+
+@*css menu nhà xuất bản*@
+<style>
+    #TieuDeNSB {
+        padding: 15px 0 15px 15px;
+        color: white;
+        width: 235px;
+        background-color: #de5529;
+    }
+
+    .itemNXB {
+        font-weight: normal;
+    }
+</style>
+

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/cssnguoidungLayout/screen.css" rel="stylesheet" />
+    <link href="~/Content/cssnguoidungLayout/fonts.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome-free-5.7.2-web/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/cssnguoidungLayout/style.css" rel="stylesheet" />
+    <script src="~/NivoSlider/jquery-1.7.1.min.js"></script>
+    <link href="~/NivoSlider/nivo-slider.css" rel="stylesheet" />
+    <script src="~/NivoSlider/jquery.nivo.slider.js"></script>
+    <script src="~/NivoSlider/jquery.nivo.slider.pack.js"></script>
+   
+</head>
+<body>
+    <div id="wrapper">
+        <section class="blank">
+            <div class="flash">
+                <div class="phone-number">
+                    <i class="fas fa-phone"></i>
+                    <span>0973 898 494</span>
+                </div>
+                <div class="navdangkydangnhap">
+                    @Html.Action("GioHangPartial", "GioHang")
+                    <i class="fa fa-sign-in"></i>   
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span class="dangkydangnhap">
+                        @Html.ActionLink("Đăng ký", "DangKy", "NguoiDung", null, htmlAttributes: new { @class = "DangKy" })
+                    </span>
+                    <i class="fas fa-key"></i>
+                    <span class="dangkydangnhap">
+                        @Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung", null, htmlAttributes: new { @class = "DangNhap" })
+                    </span>
+                </div>
+            </div>
+
+            <div class="flash success" id="Danhmuc">
+                <div id="txtTimkiem">
+                    @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                    {
+                        @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "TextBoxTimKiem", @placeholder = "Nhập vào từ khóa cần tìm ..." })
+                        
+                            <button>
+                                <i class="fas fa-search"></i>
+                            </button>
+                        
+                    }
+                   
+                </div>
+                <ul class="navMenu">
+                    <li>
+                        <a href="@Url.Action("Index","Home")">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="#">Sách</a>
+                    </li>
+                    <li>
+                        <a href="#">Liên hệ</a>
+                    </li>
+                    <li>
+                        <a href="#">Hướng dẫn</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="Menuleft">
+                <div class="activity">
+                    @Html.Action("Sachmoi","Sach")
+                </div>
+            </div>
+                <div id="slider" class="nivoSlider">
+                    <img src="~/Content/img/3.jpg" />
+                    <img src="~/Content/img/4.jpg" />
+                    <img src="~/Content/img/5.jpg" />
+                </div>
+            <div style="clear:both"></div>
+        </section>
+        <section>
+            <div>
+                @RenderBody()
+            </div>
+        </section>
+        <section>
+            <div>
+                @Html.Action("ChuDe", "ChuDe");
+            </div>
+            <hr>
+        </section>
+        <section class="blank items">
+            <div class="divLeft">
+                <div class="item">
+                    <div class="item-info" id="divNhaXuatBan">
+                        @*Action partialview*@
+                        @Html.Action("NhaXuatBan", "NhaXuatBan")
+
+                    </div>
+                    <img src="http://lorempixel.com/400/300/" alt="Image">
+                </div>
+            </div>
+            <div class="divRight">
+                @RenderSection("noidungbenphai",false)
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                controlNav: false,
+                prevText: '',
+                nextText: '',
+            });
+        });
+    </script>
+</body>
+</html>

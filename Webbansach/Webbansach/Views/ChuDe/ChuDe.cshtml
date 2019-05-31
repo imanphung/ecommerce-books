@@ -1,0 +1,9 @@
+﻿@using Webbansach.Models;
+@model List<ChuDe>
+@{
+    foreach (var item in Model)
+    {
+        <a href="@Url.Action("SachTheoChuDe",new {@machude= item.MaChuDe })" class="button button-submit">@item.TenChuDe<span class="notification">2</span></a>
+    }
+}
+

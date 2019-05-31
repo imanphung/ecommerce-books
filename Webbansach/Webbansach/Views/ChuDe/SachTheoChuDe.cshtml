@@ -1,0 +1,58 @@
+﻿@using Webbansach.Models;
+@model List<Sach>
+@{
+    ViewBag.Title = "SachTheoChuDe";
+    Layout = "~/Views/Layout/NguoidungLayout.cshtml";
+}
+<style>
+    #divChuDeVaNXB {
+        display: none;
+    }
+</style>
+<hr />
+<h2 style="margin-left:2%;font-weight:normal;color:black">Danh mục chủ đề</h2>
+<hr />
+<div style="clear:both"></div>
+<div id="divBody" style="width:100%">
+    @*Hiển thị danh mục chủ đề*@
+    <div style="float:left;width:30%;">
+        @foreach (var item in (List<ChuDe>)ViewBag.lstChuDe)
+        {
+            <a id="btnChuDe" style="width: 250px; font-size: 11pt; color: aliceblue;  text-decoration: none" href="@Url.Action("SachTheoChuDe", new {@MaChuDe=item.MaChuDe })" class="button button-submit"> @item.TenChuDe</a>
+            <br />
+
+        }
+    </div>
+    @{
+
+        int i = 0;
+        //Gợi ý: có thể copy từ trang index (copy cả link css) thay đối tượng Model bằng lstSach(được gán từ ViewBag.SachTheoChuDe bên trang controller gửi qua)
+        <div style="float:left;width:70%;">
+            @foreach (var item in Model)
+            {
+                i++;
+                <div id="SanPham" style="float:left;width:23%;margin-left:3%">
+                    <a href="@Url.Action("XemChiTiet", "Sach", new { @MaSach=item.MaSach })">  <div id="AnhBia"><img src="@Url.Content("~/imgProduct/"+item.AnhBia)" width="100" height="150" /></div></a>
+                    <div id="ThongTin">
+                        @*Nếu tên sách dài hơn 30 ký tự thì chúng ta sẽ cắt tên sách ra lấy từ ký tự 0 đến ký tự 35*@
+                        @if (item.TenSach.Length < 35)
+                        {
+                            <div id="TenSach" title="@item.TenSach">@item.TenSach.</div>
+                        }
+                        else
+                        {
+                            <div id="TenSach" title="@item.TenSach"> @item.TenSach.Substring(0, 35) ...</div>
+                        }
+                        <div id="DonGia" style="color:orange"><font color="Green">Giá:</font> @String.Format("{0:0,0}", item.GiaBan) VNĐ</div>
+                    </div>
+                </div>
+                if (i % 3 == 0)
+                {
+                    <div style="clear:both"></div>
+                }
+            }
+        </div>
+
+    }
+</div>
+<div style="clear:both"></div>

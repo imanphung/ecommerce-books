@@ -1,0 +1,73 @@
+﻿@using Webbansach.Models;
+@model  List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Layout/NguoidungLayout.cshtml";
+}
+
+<h2>GioHang</h2>
+<table id="divGioHang">
+    <tr>
+        <td>Mã sách</td>
+
+        <td>Tên sách</td>
+
+        <td>Ảnh bìa</td>
+
+        <td>Đơn giá</td>
+
+
+        <td>Số lượng</td>
+
+        <td>Thành tiền</td>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.iMaSach</td>
+
+            <td>@item.sTenSach</td>
+
+            <td><a href="@Url.Action("XemChiTiet", "Sach", new { @MaSach = item.iMaSach})"><img src="@Url.Content("~/imgProduct/"+item.sAnhBia)" width="50" height="50" /></a></td>
+
+            <td>
+                @String.Format("{0:0,0}", item.dDonGia) VNĐ
+            </td>
+
+            <td>@item.iSoLuong</td>
+
+            <td>@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+
+        </tr>
+
+    }
+
+    <tr>
+        <td colspan="6" style="text-align:right;color:blue">
+            @Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="6" style="text-align:right;color:blue">
+            @using (Html.BeginForm("DatHang", "GioHang"))
+            {
+                <input type="submit" value="Đặt hàng" />
+            }
+        </td>
+    </tr>
+</table>
+@*Css giỏ hàng*@
+<style>
+    #divGioHang {
+        border: 1px solid #EEEEEE;
+        margin-left: 10%;
+    }
+
+        #divGioHang td {
+            padding: 10px;
+            border: 1px solid #EEEEEE;
+        }
+</style>

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Webbansach",
+    "\\Webbansach\\Controllers",
+    "\\Webbansach\\Models",
+    "\\Webbansach\\Views",
+    "\\Webbansach\\Views\\Home",
+    "\\Webbansach\\Views\\Layout",
+    "\\Webbansach\\Views\\Sach",
+    "\\Webbansach\\Views\\Shared"
+  ],
+  "SelectedNode": "\\Webbansach\\Views\\Sach\\Sachmoi.cshtml",
+  "PreviewInSolutionExplorer": false
+}

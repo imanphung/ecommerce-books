@@ -1,0 +1,41 @@
+﻿/*san pham trang index*/
+/*Div sản phẩm*/
+div#SanPham {
+    float: left;
+    width: 250px;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+    /*Div hình ảnh của sp*/
+    div#SanPham img {
+        width: 200px;
+        height: 200px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+#ThongTin {
+    border: 1px solid rgba(0,0,0,.2);
+    padding: 0 15px 15px 15px;
+    font-family: 'Segoe UI';
+    font-size: 18pt;
+    font-weight: 400;
+}
+/*Div tên sách*/
+#TenSach {
+    padding: 5px;
+    height: 80px;
+}
+
+#DonGia {
+    padding: 5px;
+    font-size: 13pt;
+    border-top: 1px solid rgba(0,0,0,.2);
+}
+/**/
+#divBody {
+    margin: auto;
+}
+.noidungbenphai{
+  
+}
